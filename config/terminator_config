@@ -1,0 +1,30 @@
+[global_config]
+  title_transmit_bg_color = "#20202e"
+  title_inactive_bg_color = "#242431"
+  title_use_system_font = False
+  title_font = FiraCode Nerd Font Mono Bold 9
+[keybindings]
+  split_horiz = <Primary><Shift>d
+  split_vert = <Primary>d
+  close_term = <Primary>w
+  paste = <Primary>v
+[profiles]
+  [[default]]
+    background_color = "#20202e"
+    background_darkness = 0.96
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = FiraCode Nerd Font Bold 10
+    foreground_color = "#f3f3f3"
+    scrollback_infinite = True
+    use_system_font = False
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
