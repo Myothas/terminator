@@ -2,12 +2,29 @@
 add_newline = false
 command_timeout = 1500
 
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+threshold = 10
+style = "bold red"
+
+[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
+threshold = 30
+style = "bold yellow"
+
 [directory]
 truncation_length = 8
 truncation_symbol = "…/"
 read_only = "🔒"
 format = "[$path]($style)[$read_only]($read_only_style) "
 
+[time]
+disabled = false
+format = '🕙 [$time]($style) '
+time_format = "%T"
 
 
 # Replace the "❯" symbol in the prompt with "➜"
@@ -73,6 +90,14 @@ format = 'via [$symbol]($style)'
 
 [kotlin]
 format = 'via [$symbol]($style)'
+
+[kubernetes]
+format = '[⛵ Cluster: $context \($namespace\)](dimmed green) '
+disabled = false
+[kubernetes.context_aliases]
+"dev.local.cluster.k8s" = "dev"
+".*/openshift-cluster/.*" = "openshift"
+"gke_.*_(?P<var_cluster>[\\w-]+)" = "gke-$var_cluster"
 
 [lua]
 format = 'via [$symbol]($style)'
